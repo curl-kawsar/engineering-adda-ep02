@@ -1,0 +1,19 @@
+# Enable error reporting (disable in production)
+# php_flag display_errors on
+
+# Prevent directory browsing
+Options -Indexes
+
+# Set default file
+DirectoryIndex index.php
+
+# Protect config files
+<Files "config.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Enable clean URLs (optional)
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
